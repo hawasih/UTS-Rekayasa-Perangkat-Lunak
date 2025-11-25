@@ -19,10 +19,10 @@ Sistem absensi berbasis registrasi online dengan QR Code memungkinkan tamu menda
 - Tamu  
 - Resepsionis  
 
-![Use Case Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/images/usecase.png)
+![Use Case Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/Use%20Case%20Diagram%20.png)
 
 ## Class Diagram
-![Class Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/images/classdiagram.png)
+![Class Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/Class%20Diagram.jpeg)
 
 ### Penjelasan Kelas Utama
 1. **Tamu**  
@@ -58,14 +58,14 @@ Sistem absensi berbasis registrasi online dengan QR Code memungkinkan tamu menda
 - **Builder**: GuestRegistrationBuilder  
 
 ## Activity Diagram
-![Activity Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/images/activitydiagram.png)
+![Activity Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/activity%20diagram.png)
 
 ### Ringkasan Aktivitas
 1. Tamu membuka form registrasi → mengisi data → sistem validasi → simpan ke database → generate QR → kirim ke tamu.  
 2. Tamu datang → resepsionis scan QR → sistem verifikasi → update absensi → tamu dipersilahkan masuk.
 
 ## Sequence Diagram
-![Sequence Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/images/sequencediagram.png)
+![Sequence Diagram](https://github.com/hawasih/UTS-Rekayasa-Perangkat-Lunak/blob/main/sequence%20diagram.png)
 
 ### Ringkasan Sequence
 1. Registrasi tamu → validasi data → simpan → generate QR → kirim ke tamu.  
@@ -80,9 +80,26 @@ Sistem absensi berbasis registrasi online dengan QR Code memungkinkan tamu menda
 6. **Completed:** Kunjungan selesai.
 
 ## Evaluasi Desain
-- **Maintainability:** Mudah dirawat karena SRP dan penggunaan design pattern.  
-- **Reusability:** Kode dapat digunakan ulang (misal GuestFactory, QRCodeBuilder).  
-- **Scalability:** Sistem mudah dikembangkan dengan Open/Closed Principle dan dependency injection.  
+- **Maintainability**
+- Setiap kelas memiliki tanggung jawab tunggal (SRP).
+- Mudah diperbaiki karena modul-modul terpisah.
+- Menggunakan design pattern yang stabil.
+
+ **Reusability**
+- `GuestFactory` dapat digunakan untuk berbagai jenis tamu.
+- `QRCodeGenerator` dapat digunakan untuk tiket, reservasi, dll.
+- `DatabaseConnection` Singleton digunakan di seluruh modul.
+
+ **Scalability**
+- Penerapan Open/Closed Principle memudahkan penambahan fitur baru.
+- Repository memudahkan migrasi database.
+- Builder memudahkan penambahan field registrasi. 
+
+## Usulan Pengembangan Sistem
+- Fitur check-out otomatis menggunakan GPS/beacon.  
+- Dashboard monitoring kunjungan secara realtime.  
+- Notifikasi otomatis ke divisi terkait.  
+- Integrasi door-access untuk pintu otomatis.  
 
 ---
 
