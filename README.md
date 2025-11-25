@@ -80,7 +80,7 @@ Sistem absensi berbasis registrasi online dengan QR Code memungkinkan tamu menda
 6. **Completed:** Kunjungan selesai.
 
 ## Evaluasi Desain
-- **Maintainability**
+**Maintainability**
 - Setiap kelas memiliki tanggung jawab tunggal (SRP).
 - Mudah diperbaiki karena modul-modul terpisah.
 - Menggunakan design pattern yang stabil.
